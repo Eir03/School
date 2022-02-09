@@ -1,4 +1,5 @@
-﻿using System;
+﻿using School.Classes;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -24,7 +25,9 @@ namespace School.Pages
         {
             InitializeComponent();
             CmbClass.SelectedValuePath = "Id";
-            CmbClass.DisplayMemberPath = ""
+            CmbClass.DisplayMemberPath = "Number";
+
+            CmbClass.ItemsSource = OdbClass.entities.Class.ToList();
         }
     }
 }

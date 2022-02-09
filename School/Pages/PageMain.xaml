@@ -20,8 +20,8 @@
                   Margin="10" Grid.Row="1"
                   Background="Transparent">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Класс" Width="*" Binding="{Binding Class}"/>
-                <DataGridTextColumn Header="Фамилия" Width="*" Binding="{Binding LastName}"/>
+                <DataGridTextColumn Header="Класс" Width="*" Binding="{Binding Class.Number}"/>
+                <DataGridTextColumn Header="Фамилия" Width="*" Binding="{Binding MiddleName}"/>
                 <DataGridTextColumn Header="Имя" Width="*" Binding="{Binding FirstName}"/>
             </DataGrid.Columns>
         </DataGrid>
