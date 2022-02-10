@@ -4,11 +4,11 @@
 winexe
 C#
 .cs
-C:\Users\Admin\Source\Repos\School\School\obj\Debug\
+C:\Users\Admin\Source\Repos\School\School\obj\Release\
 School
 none
 false
-DEBUG;TRACE
+TRACE
 C:\Users\Admin\Source\Repos\School\School\App.xaml
 3-946523662
 2-612498047
@@ -16,5 +16,5 @@ C:\Users\Admin\Source\Repos\School\School\App.xaml
 181048713916
 MainWindow.xaml;Pages\PageAddStudent.xaml;Pages\PageMain.xaml;
 
-False
+True
 

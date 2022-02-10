@@ -25,6 +25,12 @@ namespace School.Pages
         public PageMain()
         {
             InitializeComponent();
+
+            CmdClass.SelectedValuePath = "Id";
+            CmdClass.DisplayMemberPath = "Number";
+
+            CmdClass.ItemsSource = OdbClass.entities.Class.ToList();
+
             DG.ItemsSource = OdbClass.entities.Student.ToList();
             
         }

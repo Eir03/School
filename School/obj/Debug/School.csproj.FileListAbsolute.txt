@@ -73,3 +73,5 @@ C:\Users\Danila\Documents\GitHub\School\School\obj\Debug\School.csproj.CoreCompi
 C:\Users\Danila\Documents\GitHub\School\School\obj\Debug\School.csproj.CopyComplete
 C:\Users\Danila\Documents\GitHub\School\School\obj\Debug\School.exe
 C:\Users\Danila\Documents\GitHub\School\School\obj\Debug\School.pdb
+C:\Users\Admin\Source\Repos\School\School\obj\Debug\Pages\PageAddStudent.g.cs
+C:\Users\Admin\Source\Repos\School\School\obj\Debug\Pages\PageAddStudent.baml

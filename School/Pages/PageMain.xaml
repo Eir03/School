@@ -4,21 +4,25 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:School.Pages"
-      mc:Ignorable="d" 
-      d:DesignHeight="420" d:DesignWidth="670"
+      mc:Ignorable="d" FontSize="14"
+      d:DesignHeight="600" d:DesignWidth="670"
       Title="PageMain" FontFamily="/School;component/Resources/#Roboto">
 
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="43*"/>
-            <RowDefinition Height="324*"/>
-            <RowDefinition Height="53*"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="60"/>
         </Grid.RowDefinitions>
-        <Button Content="Назад" HorizontalAlignment="Right"
+        <StackPanel Orientation="Horizontal">
+            <TextBlock Text="Сортировка" Style="{StaticResource TbMain}"/>
+            <ComboBox Style="{StaticResource CmbMain}" Name="CmdClass" Width="70"/>
+            <Button Name="BtnClear" Style="{StaticResource BtnBack}"
+                    Content="Стереть"/>
+        </StackPanel>
+        <Button Content="Назад" Style="{StaticResource BtnBack}"
                 Name="BtnBack" Click="BtnBack_Click"/>
-        <DataGrid AutoGenerateColumns="False" IsReadOnly="True" Name="DG"
-                  Margin="10" Grid.Row="1"
-                  Background="Transparent">
+        <DataGrid Name="DG" Grid.Row="1" Style="{StaticResource DGMain}">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Класс" Width="*" Binding="{Binding Class.Number}"/>
                 <DataGridTextColumn Header="Фамилия" Width="*" Binding="{Binding MiddleName}"/>
@@ -27,11 +31,12 @@
         </DataGrid>
 
         <StackPanel Orientation="Horizontal" Grid.Row="2" 
-                    HorizontalAlignment="Center" Height="45">
-            <Button Name="BtnDelete" Background="#FFD12626" Content="Удалить"/>
-            <Button Name="BtnAdd"
+                    HorizontalAlignment="Center">
+            <Button Name="BtnAdd" Style="{StaticResource BtnMain}"
                     Content="Добавить" Background="#FF009B38"
                     Click="BtnAdd_Click"/>
+            <Button Name="BtnDelete" Background="#FFD12626" Content="Удалить"
+                    Style="{StaticResource BtnMain}"/>
         </StackPanel>
     </Grid>
 </Page>

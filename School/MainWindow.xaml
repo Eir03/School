@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:School" FontFamily="/School;component/Resources/#Roboto"
         mc:Ignorable="d" WindowStartupLocation="CenterScreen" MinHeight="450" MinWidth="800"
-        Title="Шкёля" Height="450" Width="800">
+        Title="Шкёля" Height="600" Width="800">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="120"/>
@@ -16,21 +16,21 @@
                         VerticalAlignment="Center" Width="120" Grid.Row="1">
                 <ListView Name="ListMain"
                     ScrollViewer.HorizontalScrollBarVisibility="Disabled" 
-                              FontSize="12" Foreground="#FFE2E5F5"
+                              FontSize="14" Foreground="#FFE2E5F5"
                               BorderBrush="Transparent" 
                               Background="Transparent"
                               FontWeight="Bold" SelectionChanged="ListMain_SelectionChanged">
-                    <ListViewItem Height="30">
+                    <ListViewItem Height="40">
                         <StackPanel Orientation="Horizontal">
                             <TextBlock Margin="15 0 0 0" Text="Учителя" VerticalAlignment="Center"/>
                         </StackPanel>
                     </ListViewItem>
-                    <ListViewItem Height="30">
+                    <ListViewItem Height="40">
                         <StackPanel Orientation="Horizontal">
                             <TextBlock Margin="15 0 0 0" Text="Студенты" VerticalAlignment="Center"/>
                         </StackPanel>
                     </ListViewItem>
-                    <ListViewItem Height="30">
+                    <ListViewItem Height="40">
                         <StackPanel Orientation="Horizontal">
                             <TextBlock Margin="15 0 0 0" Text="Оценки" VerticalAlignment="Center"/>
                         </StackPanel>
