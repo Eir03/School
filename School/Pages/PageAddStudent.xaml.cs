@@ -29,5 +29,13 @@ namespace School.Pages
 
             CmbClass.ItemsSource = OdbClass.entities.Class.ToList();
         }
+
+        private void BtnAdd_Click(object sender, RoutedEventArgs e)
+        {
+            if (true)
+            {
+
+            }
+        }
     }
 }

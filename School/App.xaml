@@ -30,11 +30,16 @@
 
         <Style TargetType="DataGrid" x:Key="DGMain">
             <Setter Property="Background" Value="Transparent"/>
-            <Setter Property="AlternatingRowBackground" Value="#FF88C1C7"/>
+            <Setter Property="AlternatingRowBackground" Value="#FF7EB9BF"/>
             <Setter Property="AutoGenerateColumns" Value="False"/>
             <Setter Property="IsReadOnly" Value="True"/>
             <Setter Property="FontSize" Value="14"/>
             <Setter Property="Margin" Value="10"/>
+            <Setter Property="BorderBrush" Value="#209999"/>
+            <Setter Property="BorderThickness" Value="4"/>
+            <Setter Property="CanUserAddRows" Value="False"/>
+            <Setter Property="CanUserResizeColumns" Value="False"/>
+            <Setter Property="CanUserResizeRows" Value="False"/>
         </Style>
 
         <Style TargetType="Button" x:Key="BtnMain">
@@ -44,9 +49,8 @@
         </Style>
 
         <Style TargetType="Button" x:Key="BtnBack">
-            <Setter Property="Margin" Value="5"/>
-            <Setter Property="Height" Value="30"/>
-            <Setter Property="Width" Value="60"/>
+            <Setter Property="Margin" Value="10"/>
+            <Setter Property="Height" Value="25"/>
             <Setter Property="HorizontalAlignment" Value="Right"/>
         </Style>
 

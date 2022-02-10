@@ -28,9 +28,11 @@
                 <TextBox  Style="{StaticResource TxbMain}"/>
             </StackPanel>
 
-            <Button Content="Добавить" Width="100"/>
+            <Button Content="Добавить" Width="100" Name="BtnAdd"
+                    Click="BtnAdd_Click"/>
         </StackPanel>
-        <Button Name="BtnExit" VerticalAlignment="Top" HorizontalAlignment="Right"
-                Content="Выйти" Padding="5"/>
+        <Button Name="BtnExit" Style="{StaticResource BtnBack}"
+                VerticalAlignment="Top"
+                Content="Выйти"/>
     </Grid>
 </Page>

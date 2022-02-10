@@ -16,11 +16,10 @@
         </Grid.RowDefinitions>
         <StackPanel Orientation="Horizontal">
             <TextBlock Text="Сортировка" Style="{StaticResource TbMain}"/>
-            <ComboBox Style="{StaticResource CmbMain}" Name="CmdClass" Width="70"/>
-            <Button Name="BtnClear" Style="{StaticResource BtnBack}"
-                    Content="Стереть"/>
+            <ComboBox Style="{StaticResource CmbMain}" Name="CmdClass" Width="70"
+                      DropDownClosed="CmdClass_DropDownClosed"/>
         </StackPanel>
-        <Button Content="Назад" Style="{StaticResource BtnBack}"
+        <Button Content="Все" Style="{StaticResource BtnBack}" Width="50"
                 Name="BtnBack" Click="BtnBack_Click"/>
         <DataGrid Name="DG" Grid.Row="1" Style="{StaticResource DGMain}">
             <DataGrid.Columns>

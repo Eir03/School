@@ -31,18 +31,26 @@ namespace School.Pages
 
             CmdClass.ItemsSource = OdbClass.entities.Class.ToList();
 
-            DG.ItemsSource = OdbClass.entities.Student.ToList();
+            DG.ItemsSource = OdbClass.entities.Student.OrderBy(x => x.IdClass).ThenBy(x=>x.MiddleName).ToList();
             
         }
 
-        private void BtnBack_Click(object sender, RoutedEventArgs e)
+        private async void  BtnBack_Click(object sender, RoutedEventArgs e)
         {
-            FrameClass.frm.GoBack();
+            DG.ItemsSource = await OdbClass.entities.Student.ToListAsync();
         }
 
         private void BtnAdd_Click(object sender, RoutedEventArgs e)
         {
+            FrameClass.frm.Navigate(new PageAddStudent());
+        }
 
+        private async void CmdClass_DropDownClosed(object sender, EventArgs e)
+        {
+            if(CmdClass.SelectedIndex != -1)
+            DG.ItemsSource = await OdbClass.entities.Student.Where(x => x.IdClass == (int)CmdClass.SelectedValue)
+                    .OrderBy(x => x.MiddleName).ToListAsync();
+            CmdClass.SelectedIndex = -1;
         }
     }
 }
