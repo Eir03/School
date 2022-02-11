@@ -63,5 +63,25 @@ namespace School.Pages
                 throw;
             }
         }
+
+        private void BtnDelete_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                if (DG.SelectedItem != null)
+                {
+                    dynamic row = DG.SelectedItem;
+                    int id = row.Id;
+                    var del = OdbClass.entities.Mark.FirstOrDefault(x=>x.Id == id);
+                    OdbClass.entities.Mark.Remove(del);
+                    OdbClass.entities.SaveChanges();
+                    FrameClass.frm.Navigate(new PageAddMark(_students));
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
     }
 }

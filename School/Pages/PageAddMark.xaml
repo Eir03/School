@@ -44,7 +44,7 @@
         <StackPanel Orientation="Horizontal" Grid.Row="2" 
                     HorizontalAlignment="Center">
             <Button Name="BtnDelete" Background="#c66" Content="Удалить"
-                    Style="{StaticResource BtnMain}"/>
+                    Style="{StaticResource BtnMain}" Click="BtnDelete_Click"/>
         </StackPanel>
     </Grid>
 </Page>
