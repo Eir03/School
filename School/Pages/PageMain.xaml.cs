@@ -52,5 +52,19 @@ namespace School.Pages
                     .OrderBy(x => x.MiddleName).ToListAsync();
             CmdClass.SelectedIndex = -1;
         }
+
+        private void DataGridRow_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            try
+            {
+                dynamic row = DG.SelectedItem;
+                int ID = row.Id;
+                FrameClass.frm.Navigate(new PageAddMark(OdbClass.entities.Student.Where(x=>x.Id== ID)));
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+        }
     }
 }

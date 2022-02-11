@@ -19,20 +19,22 @@
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
                 <TextBlock Style="{StaticResource TbMain}"
                     Text="Имя"/>
-                <TextBox  Style="{StaticResource TxbMain}"/>
+                <TextBox  Style="{StaticResource TxbMain}"
+                          Name="TxbName"/>
             </StackPanel>
 
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
                 <TextBlock Style="{StaticResource TbMain}"
                     Text="Фамилия"/>
-                <TextBox  Style="{StaticResource TxbMain}"/>
+                <TextBox  Style="{StaticResource TxbMain}"
+                          Name="TxbMiddleName"/>
             </StackPanel>
 
             <Button Content="Добавить" Width="100" Name="BtnAdd"
                     Click="BtnAdd_Click"/>
         </StackPanel>
         <Button Name="BtnExit" Style="{StaticResource BtnBack}"
-                VerticalAlignment="Top"
+                VerticalAlignment="Top" Click="BtnExit_Click"
                 Content="Выйти"/>
     </Grid>
 </Page>

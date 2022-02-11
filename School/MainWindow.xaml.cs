@@ -32,7 +32,19 @@ namespace School
 
         private void ListMain_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            switch (ListMain.SelectedIndex)
+            {
+                case 0:
+                    break;
+                case 1:
+                    FrameClass.frm.Navigate(new PageMain());
+                    break;
+                case 2:
 
+                    break;
+                default:
+                    break;
+            }
         }
     }
 }

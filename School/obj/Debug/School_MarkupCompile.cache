@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\Admin\Source\Repos\School\School\obj\Debug\
+C:\Users\Danila\Documents\GitHub\School\School\obj\Debug\
 School
 none
 false
 DEBUG;TRACE
-C:\Users\Admin\Source\Repos\School\School\App.xaml
-3-946523662
-2-612498047
-201168978819
-181048713916
-MainWindow.xaml;Pages\PageAddStudent.xaml;Pages\PageMain.xaml;
+C:\Users\Danila\Documents\GitHub\School\School\App.xaml
+5-340612113
+2-742779481
+22-1626411460
+18566616545
+MainWindow.xaml;Pages\PageAddMark.xaml;Pages\PageAddStudent.xaml;Pages\PageMain.xaml;Pages\PageMark.xaml;
 
 False
 

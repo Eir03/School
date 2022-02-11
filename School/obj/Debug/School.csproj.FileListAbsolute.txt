@@ -54,7 +54,6 @@ C:\Users\Danila\Documents\GitHub\School\School\bin\Debug\EntityFramework.SqlServ
 C:\Users\Danila\Documents\GitHub\School\School\bin\Debug\EntityFramework.xml
 C:\Users\Danila\Documents\GitHub\School\School\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\Danila\Documents\GitHub\School\School\bin\Debug\ru\EntityFramework.resources.dll
-C:\Users\Danila\Documents\GitHub\School\School\obj\Debug\School.csproj.AssemblyReference.cache
 C:\Users\Danila\Documents\GitHub\School\School\obj\Debug\MainWindow.g.cs
 C:\Users\Danila\Documents\GitHub\School\School\obj\Debug\Pages\PageAddStudent.g.cs
 C:\Users\Danila\Documents\GitHub\School\School\obj\Debug\Pages\PageMain.g.cs
@@ -75,3 +74,8 @@ C:\Users\Danila\Documents\GitHub\School\School\obj\Debug\School.exe
 C:\Users\Danila\Documents\GitHub\School\School\obj\Debug\School.pdb
 C:\Users\Admin\Source\Repos\School\School\obj\Debug\Pages\PageAddStudent.g.cs
 C:\Users\Admin\Source\Repos\School\School\obj\Debug\Pages\PageAddStudent.baml
+C:\Users\Danila\Documents\GitHub\School\School\obj\Debug\School.csproj.SuggestedBindingRedirects.cache
+C:\Users\Danila\Documents\GitHub\School\School\obj\Debug\Pages\PageAddMark.g.cs
+C:\Users\Danila\Documents\GitHub\School\School\obj\Debug\Pages\PageMark.g.cs
+C:\Users\Danila\Documents\GitHub\School\School\obj\Debug\Pages\PageAddMark.baml
+C:\Users\Danila\Documents\GitHub\School\School\obj\Debug\Pages\PageMark.baml

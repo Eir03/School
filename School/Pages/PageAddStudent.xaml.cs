@@ -1,4 +1,5 @@
 ﻿using School.Classes;
+using School.ModelDataBase;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -30,12 +31,32 @@ namespace School.Pages
             CmbClass.ItemsSource = OdbClass.entities.Class.ToList();
         }
 
-        private void BtnAdd_Click(object sender, RoutedEventArgs e)
+        private async void BtnAdd_Click(object sender, RoutedEventArgs e)
         {
-            if (true)
+            if (TxbName.Text.Length != 0 && TxbMiddleName.Text.Length != 0 )
             {
-
+                try
+                {
+                    Student student = new Student()
+                    {
+                        IdClass = (int)CmbClass.SelectedValue,
+                        FirstName = TxbName.Text,
+                        MiddleName = TxbMiddleName.Text
+                    };
+                    OdbClass.entities.Student.Add(student);
+                    await OdbClass.entities.SaveChangesAsync();
+                    FrameClass.frm.Navigate(new PageMain());
+                }
+                catch (Exception)
+                {
+                    throw;
+                }
             }
+        }
+
+        private void BtnExit_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
