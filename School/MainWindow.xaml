@@ -27,7 +27,7 @@
                     </ListViewItem>
                     <ListViewItem Height="40">
                         <StackPanel Orientation="Horizontal">
-                            <TextBlock Margin="15 0 0 0" Text="Студенты" VerticalAlignment="Center"/>
+                            <TextBlock Margin="15 0 0 0" Text="Ученики" VerticalAlignment="Center"/>
                         </StackPanel>
                     </ListViewItem>
                     <ListViewItem Height="40">

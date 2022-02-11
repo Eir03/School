@@ -31,7 +31,7 @@
             </StackPanel>
 
             <Button Content="Добавить" Width="100" Name="BtnAdd"
-                    Click="BtnAdd_Click"/>
+                    Click="BtnAdd_Click" Style="{StaticResource BtnMain}" Background="#9f9"/>
         </StackPanel>
         <Button Name="BtnExit" Style="{StaticResource BtnBack}"
                 VerticalAlignment="Top" Click="BtnExit_Click"

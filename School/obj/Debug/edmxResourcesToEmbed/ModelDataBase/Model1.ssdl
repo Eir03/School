@@ -19,17 +19,10 @@
     <Key>
       <PropertyRef Name="Id" />
     </Key>
-    <Property Name="Id" Type="int" Nullable="false" />
-    <Property Name="IdStudent" Type="int" />
-    <Property Name="IdSubject" Type="int" />
-    <Property Name="MarkSubject" Type="int" />
-  </EntityType>
-  <EntityType Name="Quarter">
-    <Key>
-      <PropertyRef Name="Id" />
-    </Key>
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Year" Type="int" />
+    <Property Name="IdStudent" Type="int" Nullable="false" />
+    <Property Name="IdSubject" Type="int" Nullable="false" />
+    <Property Name="MarkSubject" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="Student">
     <Key>
@@ -81,7 +74,7 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_Mark_Student">
-    <End Role="Student" Type="Self.Student" Multiplicity="0..1" />
+    <End Role="Student" Type="Self.Student" Multiplicity="1" />
     <End Role="Mark" Type="Self.Mark" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Student">
@@ -93,7 +86,7 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_Mark_Subject">
-    <End Role="Subject" Type="Self.Subject" Multiplicity="0..1" />
+    <End Role="Subject" Type="Self.Subject" Multiplicity="1" />
     <End Role="Mark" Type="Self.Mark" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Subject">
@@ -144,7 +137,6 @@
     <EntitySet Name="Cabinet" EntityType="Self.Cabinet" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Class" EntityType="Self.Class" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Mark" EntityType="Self.Mark" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="Quarter" EntityType="Self.Quarter" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Student" EntityType="Self.Student" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Subject" EntityType="Self.Subject" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />

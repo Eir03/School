@@ -5,18 +5,32 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:School.Pages"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      d:DesignHeight="650" d:DesignWidth="800"
       Title="PageAddMark">
 
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="50"/>
+            <RowDefinition Height="60"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="65"/>
         </Grid.RowDefinitions>
         <StackPanel Orientation="Horizontal">
             <TextBlock Text="[Фамилия]" Name="TbName"
-                       Style="{StaticResource TbMain}"/>
+                           Style="{StaticResource TbMain}"/>
+            <TextBlock Text="Предмет:" Style="{StaticResource TbMain}"/>
+            <ComboBox Style="{StaticResource CmbMain}" Width="150"
+                      Name="CmbSubject"/>
+            <TextBlock Text="Оценка:" Style="{StaticResource TbMain}"/>
+            <ComboBox Width="50" Style="{StaticResource CmbMain}"
+                      Name="CmbMark">
+                <ComboBoxItem Content="5"/>
+                <ComboBoxItem Content="4"/>
+                <ComboBoxItem Content="3"/>
+                <ComboBoxItem Content="2"/>
+            </ComboBox>
+            <Button Content="Добавить" Height="22" Name="BtnAdd"
+                    Click="BtnAdd_Click"
+                    Background="#9f9"/>
         </StackPanel>
         <Button Content="Назад" Style="{StaticResource BtnBack}" Width="50"
                 Name="BtnBack"/>
@@ -29,9 +43,6 @@
 
         <StackPanel Orientation="Horizontal" Grid.Row="2" 
                     HorizontalAlignment="Center">
-            <Button Name="BtnAdd" Style="{StaticResource BtnMain}"
-                    Content="Добавить" Background="#9f9"
-                    Click="BtnAdd_Click"/>
             <Button Name="BtnDelete" Background="#c66" Content="Удалить"
                     Style="{StaticResource BtnMain}"/>
         </StackPanel>

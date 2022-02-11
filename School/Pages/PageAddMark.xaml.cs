@@ -2,6 +2,7 @@
 using School.ModelDataBase;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,18 +23,45 @@ namespace School.Pages
     /// </summary>
     public partial class PageAddMark : Page
     {
+        private IQueryable<Student> _students { get; set; }
         public PageAddMark(IQueryable<Student> students)
         {
             InitializeComponent();
-            var studentsList = students.Select(x=>x.Id).ToList();
-            DG.ItemsSource = OdbClass.entities.Mark.Where(x=>x.IdStudent == studentsList.FirstOrDefault()).ToList();
+            
+            _students = students;
+
+            CmbSubject.SelectedValuePath = "Id";
+            CmbSubject.DisplayMemberPath = "Name";
+            CmbSubject.ItemsSource = OdbClass.entities.Subject.ToList();
+
+            var student = _students.Select(x => x.Id).FirstOrDefault();
+            DG.ItemsSource = OdbClass.entities.Mark.Where(x => x.IdStudent == student).ToList();
 
             TbName.Text = students.Select(x => x.MiddleName).FirstOrDefault();
         }
 
         private void BtnAdd_Click(object sender, RoutedEventArgs e)
         {
+            try
+            {
+                if (CmbMark.SelectedIndex != -1 && CmbSubject.SelectedIndex != -1)
+                {
+                    Mark mark = new Mark() 
+                    {
+                        IdStudent = _students.Select(x=>x.Id).FirstOrDefault(),
+                        IdSubject = (int)CmbSubject.SelectedValue,
+                        MarkSubject = int.Parse(CmbMark.Text)
+                    };
+                    OdbClass.entities.Mark.Add(mark);
+                    OdbClass.entities.SaveChanges();
 
+                    FrameClass.frm.Navigate(new PageAddMark(_students));
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
         }
     }
 }

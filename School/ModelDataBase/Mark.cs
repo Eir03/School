@@ -15,9 +15,9 @@ namespace School.ModelDataBase
     public partial class Mark
     {
         public int Id { get; set; }
-        public Nullable<int> IdStudent { get; set; }
-        public Nullable<int> IdSubject { get; set; }
-        public Nullable<int> MarkSubject { get; set; }
+        public int IdStudent { get; set; }
+        public int IdSubject { get; set; }
+        public int MarkSubject { get; set; }
     
         public virtual Student Student { get; set; }
         public virtual Subject Subject { get; set; }

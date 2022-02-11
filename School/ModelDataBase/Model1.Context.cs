@@ -28,7 +28,6 @@ namespace School.ModelDataBase
         public virtual DbSet<Cabinet> Cabinet { get; set; }
         public virtual DbSet<Class> Class { get; set; }
         public virtual DbSet<Mark> Mark { get; set; }
-        public virtual DbSet<Quarter> Quarter { get; set; }
         public virtual DbSet<Student> Student { get; set; }
         public virtual DbSet<Subject> Subject { get; set; }
         public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }

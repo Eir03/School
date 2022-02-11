@@ -1,66 +1,92 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="Eir_SchoolModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="Eir_SchoolEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Cabinet" EntityType="Eir_SchoolModel.Cabinet" />
+    <EntitySet Name="Class" EntityType="Eir_SchoolModel.Class" />
+    <EntitySet Name="Mark" EntityType="Eir_SchoolModel.Mark" />
+    <EntitySet Name="Student" EntityType="Eir_SchoolModel.Student" />
+    <EntitySet Name="Subject" EntityType="Eir_SchoolModel.Subject" />
+    <EntitySet Name="sysdiagrams" EntityType="Eir_SchoolModel.sysdiagrams" />
+    <EntitySet Name="Teacher" EntityType="Eir_SchoolModel.Teacher" />
+    <AssociationSet Name="FK_Teacher_Cabinet" Association="Eir_SchoolModel.FK_Teacher_Cabinet">
+      <End Role="Cabinet" EntitySet="Cabinet" />
+      <End Role="Teacher" EntitySet="Teacher" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Class_Teacher" Association="Eir_SchoolModel.FK_Class_Teacher">
+      <End Role="Teacher" EntitySet="Teacher" />
+      <End Role="Class" EntitySet="Class" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Student_Class" Association="Eir_SchoolModel.FK_Student_Class">
+      <End Role="Class" EntitySet="Class" />
+      <End Role="Student" EntitySet="Student" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Mark_Student" Association="Eir_SchoolModel.FK_Mark_Student">
+      <End Role="Student" EntitySet="Student" />
+      <End Role="Mark" EntitySet="Mark" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Mark_Subject" Association="Eir_SchoolModel.FK_Mark_Subject">
+      <End Role="Subject" EntitySet="Subject" />
+      <End Role="Mark" EntitySet="Mark" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Teacher_Subject" Association="Eir_SchoolModel.FK_Teacher_Subject">
+      <End Role="Subject" EntitySet="Subject" />
+      <End Role="Teacher" EntitySet="Teacher" />
+    </AssociationSet>
+  </EntityContainer>
   <EntityType Name="Cabinet">
     <Key>
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Number" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
-    <NavigationProperty Name="Teacher" Relationship="Self.FK_Teacher_Cabinet" FromRole="Cabinet" ToRole="Teacher" />
+    <Property Name="Number" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Teacher" Relationship="Eir_SchoolModel.FK_Teacher_Cabinet" FromRole="Cabinet" ToRole="Teacher" />
   </EntityType>
   <EntityType Name="Class">
     <Key>
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Number" Type="String" MaxLength="3" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Number" Type="String" Nullable="false" MaxLength="3" FixedLength="false" Unicode="true" />
     <Property Name="IdCurator" Type="Int32" Nullable="false" />
-    <NavigationProperty Name="Teacher" Relationship="Self.FK_Class_Teacher" FromRole="Class" ToRole="Teacher" />
-    <NavigationProperty Name="Student" Relationship="Self.FK_Student_Class" FromRole="Class" ToRole="Student" />
+    <NavigationProperty Name="Teacher" Relationship="Eir_SchoolModel.FK_Class_Teacher" FromRole="Class" ToRole="Teacher" />
+    <NavigationProperty Name="Student" Relationship="Eir_SchoolModel.FK_Student_Class" FromRole="Class" ToRole="Student" />
   </EntityType>
   <EntityType Name="Mark">
     <Key>
       <PropertyRef Name="Id" />
     </Key>
-    <Property Name="Id" Type="Int32" Nullable="false" />
-    <Property Name="IdStudent" Type="Int32" />
-    <Property Name="IdSubject" Type="Int32" />
-    <Property Name="MarkSubject" Type="Int32" />
-    <NavigationProperty Name="Student" Relationship="Self.FK_Mark_Student" FromRole="Mark" ToRole="Student" />
-    <NavigationProperty Name="Subject" Relationship="Self.FK_Mark_Subject" FromRole="Mark" ToRole="Subject" />
-  </EntityType>
-  <EntityType Name="Quarter">
-    <Key>
-      <PropertyRef Name="Id" />
-    </Key>
     <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Year" Type="Int32" />
+    <Property Name="IdStudent" Type="Int32" Nullable="false" />
+    <Property Name="IdSubject" Type="Int32" Nullable="false" />
+    <Property Name="MarkSubject" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Student" Relationship="Eir_SchoolModel.FK_Mark_Student" FromRole="Mark" ToRole="Student" />
+    <NavigationProperty Name="Subject" Relationship="Eir_SchoolModel.FK_Mark_Subject" FromRole="Mark" ToRole="Subject" />
   </EntityType>
   <EntityType Name="Student">
     <Key>
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="MiddleName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="FirstName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="MiddleName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="IdClass" Type="Int32" Nullable="false" />
-    <NavigationProperty Name="Class" Relationship="Self.FK_Student_Class" FromRole="Student" ToRole="Class" />
-    <NavigationProperty Name="Mark" Relationship="Self.FK_Mark_Student" FromRole="Student" ToRole="Mark" />
+    <NavigationProperty Name="Class" Relationship="Eir_SchoolModel.FK_Student_Class" FromRole="Student" ToRole="Class" />
+    <NavigationProperty Name="Mark" Relationship="Eir_SchoolModel.FK_Mark_Student" FromRole="Student" ToRole="Mark" />
   </EntityType>
   <EntityType Name="Subject">
     <Key>
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-    <NavigationProperty Name="Mark" Relationship="Self.FK_Mark_Subject" FromRole="Subject" ToRole="Mark" />
-    <NavigationProperty Name="Teacher" Relationship="Self.FK_Teacher_Subject" FromRole="Subject" ToRole="Teacher" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Mark" Relationship="Eir_SchoolModel.FK_Mark_Subject" FromRole="Subject" ToRole="Mark" />
+    <NavigationProperty Name="Teacher" Relationship="Eir_SchoolModel.FK_Teacher_Subject" FromRole="Subject" ToRole="Teacher" />
   </EntityType>
   <EntityType Name="sysdiagrams">
     <Key>
       <PropertyRef Name="diagram_id" />
     </Key>
-    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
     <Property Name="principal_id" Type="Int32" Nullable="false" />
     <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="version" Type="Int32" />
@@ -71,18 +97,18 @@
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="FirstName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="MiddleName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="FirstName" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="MiddleName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="IdSubject" Type="Int32" Nullable="false" />
     <Property Name="IdCabinet" Type="Int32" Nullable="false" />
-    <NavigationProperty Name="Cabinet" Relationship="Self.FK_Teacher_Cabinet" FromRole="Teacher" ToRole="Cabinet" />
-    <NavigationProperty Name="Class" Relationship="Self.FK_Class_Teacher" FromRole="Teacher" ToRole="Class" />
-    <NavigationProperty Name="Subject" Relationship="Self.FK_Teacher_Subject" FromRole="Teacher" ToRole="Subject" />
+    <NavigationProperty Name="Cabinet" Relationship="Eir_SchoolModel.FK_Teacher_Cabinet" FromRole="Teacher" ToRole="Cabinet" />
+    <NavigationProperty Name="Class" Relationship="Eir_SchoolModel.FK_Class_Teacher" FromRole="Teacher" ToRole="Class" />
+    <NavigationProperty Name="Subject" Relationship="Eir_SchoolModel.FK_Teacher_Subject" FromRole="Teacher" ToRole="Subject" />
   </EntityType>
   <Association Name="FK_Teacher_Cabinet">
-    <End Role="Cabinet" Type="Self.Cabinet" Multiplicity="1" />
-    <End Role="Teacher" Type="Self.Teacher" Multiplicity="*" />
+    <End Type="Eir_SchoolModel.Cabinet" Role="Cabinet" Multiplicity="1" />
+    <End Type="Eir_SchoolModel.Teacher" Role="Teacher" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Cabinet">
         <PropertyRef Name="Id" />
@@ -93,8 +119,8 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_Class_Teacher">
-    <End Role="Teacher" Type="Self.Teacher" Multiplicity="1" />
-    <End Role="Class" Type="Self.Class" Multiplicity="*" />
+    <End Type="Eir_SchoolModel.Teacher" Role="Teacher" Multiplicity="1" />
+    <End Type="Eir_SchoolModel.Class" Role="Class" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Teacher">
         <PropertyRef Name="Id" />
@@ -105,8 +131,8 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_Student_Class">
-    <End Role="Class" Type="Self.Class" Multiplicity="1" />
-    <End Role="Student" Type="Self.Student" Multiplicity="*" />
+    <End Type="Eir_SchoolModel.Class" Role="Class" Multiplicity="1" />
+    <End Type="Eir_SchoolModel.Student" Role="Student" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Class">
         <PropertyRef Name="Id" />
@@ -117,8 +143,8 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_Mark_Student">
-    <End Role="Student" Type="Self.Student" Multiplicity="0..1" />
-    <End Role="Mark" Type="Self.Mark" Multiplicity="*" />
+    <End Type="Eir_SchoolModel.Student" Role="Student" Multiplicity="1" />
+    <End Type="Eir_SchoolModel.Mark" Role="Mark" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Student">
         <PropertyRef Name="Id" />
@@ -129,8 +155,8 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_Mark_Subject">
-    <End Role="Subject" Type="Self.Subject" Multiplicity="0..1" />
-    <End Role="Mark" Type="Self.Mark" Multiplicity="*" />
+    <End Type="Eir_SchoolModel.Subject" Role="Subject" Multiplicity="1" />
+    <End Type="Eir_SchoolModel.Mark" Role="Mark" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Subject">
         <PropertyRef Name="Id" />
@@ -141,8 +167,8 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_Teacher_Subject">
-    <End Role="Subject" Type="Self.Subject" Multiplicity="1" />
-    <End Role="Teacher" Type="Self.Teacher" Multiplicity="*" />
+    <End Type="Eir_SchoolModel.Subject" Role="Subject" Multiplicity="1" />
+    <End Type="Eir_SchoolModel.Teacher" Role="Teacher" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Subject">
         <PropertyRef Name="Id" />
@@ -152,38 +178,4 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <EntityContainer Name="Eir_SchoolEntities" annotation:LazyLoadingEnabled="true">
-    <EntitySet Name="Cabinet" EntityType="Self.Cabinet" />
-    <EntitySet Name="Class" EntityType="Self.Class" />
-    <EntitySet Name="Mark" EntityType="Self.Mark" />
-    <EntitySet Name="Quarter" EntityType="Self.Quarter" />
-    <EntitySet Name="Student" EntityType="Self.Student" />
-    <EntitySet Name="Subject" EntityType="Self.Subject" />
-    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
-    <EntitySet Name="Teacher" EntityType="Self.Teacher" />
-    <AssociationSet Name="FK_Teacher_Cabinet" Association="Self.FK_Teacher_Cabinet">
-      <End Role="Cabinet" EntitySet="Cabinet" />
-      <End Role="Teacher" EntitySet="Teacher" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Class_Teacher" Association="Self.FK_Class_Teacher">
-      <End Role="Teacher" EntitySet="Teacher" />
-      <End Role="Class" EntitySet="Class" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Student_Class" Association="Self.FK_Student_Class">
-      <End Role="Class" EntitySet="Class" />
-      <End Role="Student" EntitySet="Student" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Mark_Student" Association="Self.FK_Mark_Student">
-      <End Role="Student" EntitySet="Student" />
-      <End Role="Mark" EntitySet="Mark" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Mark_Subject" Association="Self.FK_Mark_Subject">
-      <End Role="Subject" EntitySet="Subject" />
-      <End Role="Mark" EntitySet="Mark" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Teacher_Subject" Association="Self.FK_Teacher_Subject">
-      <End Role="Subject" EntitySet="Subject" />
-      <End Role="Teacher" EntitySet="Teacher" />
-    </AssociationSet>
-  </EntityContainer>
 </Schema>
