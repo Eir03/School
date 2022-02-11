@@ -79,3 +79,4 @@ C:\Users\Danila\Documents\GitHub\School\School\obj\Debug\Pages\PageAddMark.g.cs
 C:\Users\Danila\Documents\GitHub\School\School\obj\Debug\Pages\PageMark.g.cs
 C:\Users\Danila\Documents\GitHub\School\School\obj\Debug\Pages\PageAddMark.baml
 C:\Users\Danila\Documents\GitHub\School\School\obj\Debug\Pages\PageMark.baml
+C:\Users\Danila\Documents\GitHub\School\School\obj\Debug\School.csproj.AssemblyReference.cache

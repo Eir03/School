@@ -56,7 +56,7 @@ namespace School.Pages
 
         private void BtnExit_Click(object sender, RoutedEventArgs e)
         {
-
+            FrameClass.frm.Navigate(new PageMain());
         }
     }
 }

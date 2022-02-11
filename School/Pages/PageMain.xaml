@@ -37,9 +37,9 @@
         <StackPanel Orientation="Horizontal" Grid.Row="2" 
                     HorizontalAlignment="Center">
             <Button Name="BtnAdd" Style="{StaticResource BtnMain}"
-                    Content="Добавить" Background="#FF009B38"
+                    Content="Добавить" Background="#9f9"
                     Click="BtnAdd_Click"/>
-            <Button Name="BtnDelete" Background="#FFD12626" Content="Удалить"
+            <Button Name="BtnDelete" Background="#c66" Content="Удалить"
                     Style="{StaticResource BtnMain}"/>
         </StackPanel>
     </Grid>

@@ -28,6 +28,7 @@ namespace School.Pages
             var studentsList = students.Select(x=>x.Id).ToList();
             DG.ItemsSource = OdbClass.entities.Mark.Where(x=>x.IdStudent == studentsList.FirstOrDefault()).ToList();
 
+            TbName.Text = students.Select(x => x.MiddleName).FirstOrDefault();
         }
 
         private void BtnAdd_Click(object sender, RoutedEventArgs e)

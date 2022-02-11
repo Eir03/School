@@ -12,10 +12,11 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="50"/>
             <RowDefinition Height="*"/>
-            <RowDefinition Height="60"/>
+            <RowDefinition Height="65"/>
         </Grid.RowDefinitions>
         <StackPanel Orientation="Horizontal">
-            <TextBlock Text="[Фамилия]" Style="{StaticResource TbMain}"/>
+            <TextBlock Text="[Фамилия]" Name="TbName"
+                       Style="{StaticResource TbMain}"/>
         </StackPanel>
         <Button Content="Назад" Style="{StaticResource BtnBack}" Width="50"
                 Name="BtnBack"/>
@@ -29,9 +30,9 @@
         <StackPanel Orientation="Horizontal" Grid.Row="2" 
                     HorizontalAlignment="Center">
             <Button Name="BtnAdd" Style="{StaticResource BtnMain}"
-                    Content="Добавить" Background="#FF009B38"
+                    Content="Добавить" Background="#9f9"
                     Click="BtnAdd_Click"/>
-            <Button Name="BtnDelete" Background="#FFD12626" Content="Удалить"
+            <Button Name="BtnDelete" Background="#c66" Content="Удалить"
                     Style="{StaticResource BtnMain}"/>
         </StackPanel>
     </Grid>
