@@ -35,6 +35,7 @@ namespace School
             switch (ListMain.SelectedIndex)
             {
                 case 0:
+                    FrameClass.frm.Navigate(new PageTeacher());
                     break;
                 case 1:
                     FrameClass.frm.Navigate(new PageMain());

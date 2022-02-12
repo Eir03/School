@@ -90,6 +90,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\PageTeacher.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ModelDataBase\Cabinet.cs">
@@ -136,6 +140,9 @@
     </Compile>
     <Compile Include="Pages\PageMain.xaml.cs">
       <DependentUpon>PageMain.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\PageTeacher.xaml.cs">
+      <DependentUpon>PageTeacher.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>

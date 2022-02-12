@@ -1,0 +1,35 @@
+﻿<Page x:Class="School.Pages.PageTeacher"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:School.Pages"
+      mc:Ignorable="d" FontSize="14" FontFamily="/School;component/Resources/#Roboto"
+      d:DesignHeight="600" d:DesignWidth="670"
+      Title="PageTeacher">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="60"/>
+        </Grid.RowDefinitions>
+        <DataGrid Name="DG" Grid.Row="1" Style="{StaticResource DGMain}">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Фамилия" Width="*" Binding="{Binding MiddleName}"/>
+                <DataGridTextColumn Header="Имя" Width="*" Binding="{Binding FirstName}"/>
+                <DataGridTextColumn Header="Предмет" Binding="{Binding Subject.Name}" Width="*"/>
+                <DataGridTextColumn Header="Кабинет" Binding="{Binding Cabinet.Number}" Width="*"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <StackPanel Orientation="Horizontal" Grid.Row="2" 
+                    HorizontalAlignment="Center">
+            <Button Name="BtnAdd" Style="{StaticResource BtnMain}"
+                    Content="Добавить" Background="#9f9"
+                    />
+            <Button Name="BtnDelete" Background="#c66" Content="Удалить"
+                    Style="{StaticResource BtnMain}"/>
+        </StackPanel>
+    </Grid>
+</Page>
