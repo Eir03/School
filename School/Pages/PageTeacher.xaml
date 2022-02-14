@@ -27,9 +27,10 @@
                     HorizontalAlignment="Center">
             <Button Name="BtnAdd" Style="{StaticResource BtnMain}"
                     Content="Добавить" Background="#9f9"
-                    />
+                    Click="BtnAdd_Click"/>
             <Button Name="BtnDelete" Background="#c66" Content="Удалить"
-                    Style="{StaticResource BtnMain}"/>
+                    Style="{StaticResource BtnMain}"
+                    Click="BtnDelete_Click"/>
         </StackPanel>
     </Grid>
 </Page>

@@ -27,5 +27,30 @@ namespace School.Pages
 
             DG.ItemsSource = OdbClass.entities.Teacher.ToList();
         }
+
+        private void BtnAdd_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void BtnDelete_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                if (DG.SelectedItem != null)
+                {
+                    dynamic row = DG.SelectedItem;
+                    int id = row.Id;
+                    var del = OdbClass.entities.Teacher.FirstOrDefault(x => x.Id == id);
+                    OdbClass.entities.Teacher.Remove(del);
+                    OdbClass.entities.SaveChanges();
+                    FrameClass.frm.Navigate(new PageTeacher());
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
     }
 }

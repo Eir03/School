@@ -80,3 +80,5 @@ C:\Users\Danila\Documents\GitHub\School\School\obj\Debug\Pages\PageAddMark.baml
 C:\Users\Danila\Documents\GitHub\School\School\obj\Debug\School.csproj.AssemblyReference.cache
 C:\Users\Danila\Documents\GitHub\School\School\obj\Debug\Pages\PageTeacher.g.cs
 C:\Users\Danila\Documents\GitHub\School\School\obj\Debug\Pages\PageTeacher.baml
+C:\Users\Danila\Documents\GitHub\School\School\obj\Debug\Pages\AddTeacher.g.cs
+C:\Users\Danila\Documents\GitHub\School\School\obj\Debug\Pages\AddTeacher.baml
