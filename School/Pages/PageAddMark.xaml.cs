@@ -83,5 +83,10 @@ namespace School.Pages
                 throw;
             }
         }
+
+        private void BtnBack_Click(object sender, RoutedEventArgs e)
+        {
+            FrameClass.frm.Navigate(new PageMain());
+        }
     }
 }

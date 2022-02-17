@@ -13,7 +13,7 @@
     </Key>
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Number" Type="nvarchar" MaxLength="3" Nullable="false" />
-    <Property Name="IdCurator" Type="int" Nullable="false" />
+    <Property Name="IdCurator" Type="int" />
   </EntityType>
   <EntityType Name="Mark">
     <Key>
@@ -62,7 +62,7 @@
     <Property Name="IdCabinet" Type="int" Nullable="false" />
   </EntityType>
   <Association Name="FK_Class_Teacher">
-    <End Role="Teacher" Type="Self.Teacher" Multiplicity="1" />
+    <End Role="Teacher" Type="Self.Teacher" Multiplicity="0..1" />
     <End Role="Class" Type="Self.Class" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Teacher">

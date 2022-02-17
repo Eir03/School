@@ -37,7 +37,7 @@ namespace School.Pages
 
         private async void  BtnBack_Click(object sender, RoutedEventArgs e)
         {
-            DG.ItemsSource = await OdbClass.entities.Student.ToListAsync();
+            DG.ItemsSource = await OdbClass.entities.Student.OrderBy(x => x.IdClass).ThenBy(x => x.MiddleName).ToListAsync();
         }
 
         private void BtnAdd_Click(object sender, RoutedEventArgs e)

@@ -18,7 +18,7 @@
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Number" Type="nvarchar" MaxLength="3" Nullable="false" />
-          <Property Name="IdCurator" Type="int" Nullable="false" />
+          <Property Name="IdCurator" Type="int" />
         </EntityType>
         <EntityType Name="Mark">
           <Key>
@@ -67,7 +67,7 @@
           <Property Name="IdCabinet" Type="int" Nullable="false" />
         </EntityType>
         <Association Name="FK_Class_Teacher">
-          <End Role="Teacher" Type="Self.Teacher" Multiplicity="1" />
+          <End Role="Teacher" Type="Self.Teacher" Multiplicity="0..1" />
           <End Role="Class" Type="Self.Class" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Teacher">
@@ -222,7 +222,7 @@
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Number" Type="String" Nullable="false" MaxLength="3" FixedLength="false" Unicode="true" />
-          <Property Name="IdCurator" Type="Int32" Nullable="false" />
+          <Property Name="IdCurator" Type="Int32" />
           <NavigationProperty Name="Teacher" Relationship="Eir_SchoolModel.FK_Class_Teacher" FromRole="Class" ToRole="Teacher" />
           <NavigationProperty Name="Student" Relationship="Eir_SchoolModel.FK_Student_Class" FromRole="Class" ToRole="Student" />
         </EntityType>
@@ -294,7 +294,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Class_Teacher">
-          <End Type="Eir_SchoolModel.Teacher" Role="Teacher" Multiplicity="1" />
+          <End Type="Eir_SchoolModel.Teacher" Role="Teacher" Multiplicity="0..1" />
           <End Type="Eir_SchoolModel.Class" Role="Class" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Teacher">
@@ -353,7 +353,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-      </Schema>
+        </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>

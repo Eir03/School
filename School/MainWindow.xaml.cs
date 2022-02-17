@@ -41,7 +41,7 @@ namespace School
                     FrameClass.frm.Navigate(new PageMain());
                     break;
                 case 2:
-
+                    FrameClass.frm.Navigate(new PageMarkStat());
                     break;
                 default:
                     break;

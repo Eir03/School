@@ -30,7 +30,7 @@ namespace School.Pages
 
         private void BtnAdd_Click(object sender, RoutedEventArgs e)
         {
-
+            FrameClass.frm.Navigate(new AddTeacher());
         }
 
         private void BtnDelete_Click(object sender, RoutedEventArgs e)

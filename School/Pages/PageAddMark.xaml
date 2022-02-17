@@ -33,7 +33,7 @@
                     Background="#9f9"/>
         </StackPanel>
         <Button Content="Назад" Style="{StaticResource BtnBack}" Width="50"
-                Name="BtnBack"/>
+                Name="BtnBack" Click="BtnBack_Click"/>
         <DataGrid Name="DG" Grid.Row="1" Style="{StaticResource DGMain}">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Предмет" Width="*" Binding="{Binding Subject.Name}"/>
